@@ -1,0 +1,258 @@
+.report-form-page {
+  padding: 2rem 0 4rem;
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.report-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+}
+
+.report-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-gray-600);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Form Layout */
+.report-form {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.form-section {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-gray-200);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Input Styles */
+.input.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Media Upload */
+.media-upload-area {
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.media-upload-area:hover {
+  border-color: var(--color-black);
+}
+
+.media-input {
+  display: none;
+}
+
+.media-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+
+.media-upload-label span {
+  font-size: 0.875rem;
+}
+
+/* Media Preview */
+.media-preview {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.media-item {
+  position: relative;
+  background-color: var(--color-gray-100);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.media-thumbnail {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+.media-thumbnail.video {
+  background-color: var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-600);
+}
+
+.media-name {
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+  display: block;
+  word-break: break-word;
+}
+
+.remove-media {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Location Section */
+.location-section {
+  background-color: var(--color-gray-50);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.location-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.location-display {
+  background-color: var(--color-white);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-gray-200);
+}
+
+.location-text {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-black);
+}
+
+.location-help {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+  margin: 0;
+  text-align: center;
+}
+
+/* Form Actions */
+.form-actions {
+  text-align: center;
+}
+
+.submit-btn {
+  min-width: 200px;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .report-title {
+    font-size: 2rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .media-preview {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .report-form-page {
+    padding: 1rem 0 2rem;
+  }
+
+  .report-title {
+    font-size: 1.75rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  .media-upload-area {
+    padding: 1.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
