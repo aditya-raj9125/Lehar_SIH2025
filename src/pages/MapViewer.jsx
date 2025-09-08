@@ -21,7 +21,7 @@ const MapViewer = () => {
     { day: 'Sun', reports: 10, date: '2024-01-21' },
   ];
 
-  // Mock data - in real app this would come from Supabase
+  // Mock data - in real app this would come from your backend API
   const mockReports = [
     {
       id: 1,

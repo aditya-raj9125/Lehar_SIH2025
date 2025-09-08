@@ -161,10 +161,10 @@ const About = () => {
             <div className="tech-category">
               <h3 className="tech-category-title">Backend</h3>
               <div className="tech-items">
-                <span className="tech-item">Supabase</span>
+                <span className="tech-item">Node.js</span>
                 <span className="tech-item">PostgreSQL</span>
-                <span className="tech-item">Edge Functions</span>
-                <span className="tech-item">Real-time Engine</span>
+                <span className="tech-item">Express.js</span>
+                <span className="tech-item">REST API</span>
               </div>
             </div>
             <div className="tech-category">

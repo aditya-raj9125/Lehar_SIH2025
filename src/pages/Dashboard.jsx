@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview')
   const [timeRange, setTimeRange] = useState('24h')
 
-  // Mock data - in real app this would come from Supabase
+  // Mock data - in real app this would come from your backend API
   const metrics = [
     { label: 'Incidents this month', value: '120+', trend: '+15%', color: 'var(--color-black)' },
     { label: 'High-risk states', value: '6', trend: '+2', color: 'var(--color-black)' },

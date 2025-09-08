@@ -69,8 +69,8 @@ const ReportForm = () => {
 
       console.log('Submitting report:', reportData)
       
-      // Here you would send data to Supabase
-      // await supabase.from('reports').insert(reportData)
+      // Here you would send data to your backend API
+      // await fetch('/api/reports', { method: 'POST', body: JSON.stringify(reportData) })
       
       // Simulate delay
       await new Promise(resolve => setTimeout(resolve, 2000))
