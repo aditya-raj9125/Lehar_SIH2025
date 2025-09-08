@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, MapPin, BarChart3, FileText, User } from 'lucide-react'
 import './Header.css'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const location = useLocation()
 
   const navigation = [
@@ -16,8 +18,47 @@ const Header = () => {
 
   const isActive = (path) => location.pathname === path
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const scrollDifference = Math.abs(currentScrollY - lastScrollY)
+      
+      // Only trigger if scroll difference is significant (prevents jittery behavior)
+      if (scrollDifference < 5) return
+      
+      // Show header when scrolling up or at the top
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsHeaderVisible(true)
+      } 
+      // Hide header when scrolling down (only after scrolling past 100px)
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsHeaderVisible(false)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    // Throttle scroll events for better performance
+    let ticking = false
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', throttledHandleScroll)
+    }
+  }, [lastScrollY])
+
   return (
-    <header className="header">
+    <header className={`header ${isHeaderVisible ? 'header-visible' : 'header-hidden'}`}>
       <div className="container">
         <div className="header-content">
           {/* Logo */}
@@ -42,7 +83,7 @@ const Header = () => {
                   to={item.href}
                   className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                   {item.name}
                 </Link>
               )
@@ -81,7 +122,7 @@ const Header = () => {
                   className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                   {item.name}
                 </Link>
               )

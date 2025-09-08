@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, BarChart3, Brain, Users, Shield, Globe, UserCheck, TrendingUp, MapIcon, Image, AlertTriangle } from 'lucide-react'
+import { MapPin, BarChart3, Brain, Users, Shield, Globe, UserCheck, TrendingUp, MapIcon, Image, AlertTriangle, Languages, Users2, Map, Activity } from 'lucide-react'
 import './HomePage.css'
 
 const HomePage = () => {
   const features = [
     {
-      title: 'Crowdsourced reporting.',
+      title: 'Crowd Reporting',
       description: 'Submit geotagged observations, photos, and videos via a user-friendly app.',
       icon: Users,
       color: 'var(--color-gray-100)',
     },
     {
-      title: 'Dynamic map dashboard.',
+      title: 'Dynamic Maps',
       description: 'Visualize live reports and social media hotspots with advanced filters.',
       icon: MapPin,
       color: 'var(--color-gray-100)',
@@ -27,6 +27,12 @@ const HomePage = () => {
       title: 'Role-based access',
       description: 'Assign user rights for citizens, officials, and analysts for tailored data access.',
       icon: Shield,
+      color: 'var(--color-gray-100)',
+    },
+    {
+      title: 'Multilingual support',
+      description: 'Access the platform in multiple Indian languages for better citizen engagement.',
+      icon: Languages,
       color: 'var(--color-gray-100)',
     },
   ]
@@ -130,7 +136,7 @@ const HomePage = () => {
           <div className="metrics-grid">
             <div className="metric-card">
               <div className="metric-icon active-users">
-                <UserCheck size={24} />
+                <Users2 size={24} />
               </div>
               <div className="metric-content">
                 <h3 className="metric-title">Active Users</h3>
@@ -144,7 +150,7 @@ const HomePage = () => {
 
             <div className="metric-card">
               <div className="metric-icon coverage-area">
-                <MapIcon size={24} />
+                <Map size={24} />
               </div>
               <div className="metric-content">
                 <h3 className="metric-title">Coverage Area</h3>
@@ -158,7 +164,7 @@ const HomePage = () => {
 
             <div className="metric-card">
               <div className="metric-icon reports-media">
-                <Image size={24} />
+                <Activity size={24} />
               </div>
               <div className="metric-content">
                 <h3 className="metric-title">Incidents this month</h3>
@@ -256,7 +262,10 @@ const HomePage = () => {
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">Be the Change. Save Lives.</h2>
+            <h2 className="cta-title">
+              <span className="cta-title-part-1">Be the Change.</span>
+              <span className="cta-title-part-2"> Save Lives.</span>
+            </h2>
             <p className="cta-description">
               Your voice matters. Every report you submit helps protect thousands of coastal families. 
               Join India's largest citizen-driven disaster response network and become a guardian of our coastline.

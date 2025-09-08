@@ -7,37 +7,27 @@ const Footer = () => {
     {
       title: 'Quick Links',
       links: [
+        { name: 'Report now', href: '/report' },
         { name: 'Live Map', href: '/map' },
-        { name: 'Report Hazard', href: '/report' },
-        { name: 'Incidents', href: '/incidents' },
-        { name: 'Analytics', href: '/dashboard' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Hazard Information', href: '/hazards' },
-        { name: 'Data Catalog', href: '/data' },
-        { name: 'Safety Guides', href: '/guide' },
-        { name: 'API Documentation', href: '/api' },
+        { name: 'Dashboard', href: '/dashboard' },
       ],
     },
     {
       title: 'Contact',
       links: [
-        { name: 'Emergency: 1070', href: 'tel:1070' },
-        { name: 'Coast Guard: 1554', href: 'tel:1554' },
         { name: 'Email: support@lehar.gov.in', href: 'mailto:support@lehar.gov.in' },
+        { name: 'Contact: +91-XXX-XXXX-XXX', href: 'tel:+91XXXXXXXXXX' },
         { name: 'Contact Us', href: '/contact' },
       ],
     },
     {
       title: 'Social',
       links: [
-        { name: 'Twitter', href: 'https://twitter.com/lehar_gov' },
         { name: 'Facebook', href: 'https://facebook.com/lehar.gov' },
-        { name: 'YouTube', href: 'https://youtube.com/lehar' },
+        { name: 'Instagram', href: 'https://instagram.com/lehar_gov' },
+        { name: 'Twitter', href: 'https://twitter.com/lehar_gov' },
         { name: 'LinkedIn', href: 'https://linkedin.com/company/lehar' },
+        { name: 'YouTube', href: 'https://youtube.com/lehar' },
       ],
     },
     {
@@ -45,8 +35,6 @@ const Footer = () => {
       links: [
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Terms of Service', href: '/terms' },
-        { name: 'Accessibility', href: '/accessibility' },
-        { name: 'Disclaimer', href: '/disclaimer' },
       ],
     },
   ]
